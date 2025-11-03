@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { ShoppingCart, Search, User, Menu } from "lucide-react";
+import { Search, User, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { CartDrawer } from "@/components/CartDrawer";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -87,15 +88,14 @@ export const Navbar = () => {
               <Input 
                 placeholder="Search shoes..." 
                 className="pl-10 w-64"
+                data-testid="input-search"
               />
             </div>
-            <Button variant="ghost" size="icon">
+            <Button variant="ghost" size="icon" data-testid="button-user">
               <User className="h-5 w-5" />
             </Button>
-            <Button variant="ghost" size="icon">
-              <ShoppingCart className="h-5 w-5" />
-            </Button>
-            <Button variant="ghost" size="icon" className="md:hidden">
+            <CartDrawer />
+            <Button variant="ghost" size="icon" className="md:hidden" data-testid="button-menu">
               <Menu className="h-5 w-5" />
             </Button>
           </div>
